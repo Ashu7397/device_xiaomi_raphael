@@ -33,6 +33,7 @@ import android.os.IBinder;
 import android.os.UserHandle;
 import android.util.Log;
 
+import org.lineageos.settings.utils.FileUtils;
 import vendor.xiaomi.hardware.motor.V1_0.IMotor;
 
 public class PopupCameraService extends Service {
