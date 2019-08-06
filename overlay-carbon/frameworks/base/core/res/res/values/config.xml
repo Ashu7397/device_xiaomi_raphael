@@ -20,4 +20,7 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <!-- Whether the device supports Smart Pixels -->
     <bool name="config_enableSmartPixels">true</bool>
+
+    <!-- Enable for devices with higher aspect ratio screen. -->
+    <bool name="config_haveHigherAspectRatioScreen">true</bool>
 </resources>
