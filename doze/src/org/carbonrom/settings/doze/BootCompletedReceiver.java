@@ -15,25 +15,23 @@
  * limitations under the License.
  */
 
-package org.lineageos.settings;
+package org.carbonrom.settings;
 
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.util.Log;
 
-import org.lineageos.settings.dirac.DiracUtils;
-import org.lineageos.settings.popupcamera.PopupCameraUtils;
+import org.carbonrom.settings.doze.DozeUtils;
 
 public class BootCompletedReceiver extends BroadcastReceiver {
 
     private static final boolean DEBUG = false;
-    private static final String TAG = "XiaomiParts";
+    private static final String TAG = "XiaomiDoze";
 
     @Override
     public void onReceive(final Context context, Intent intent) {
         if (DEBUG) Log.d(TAG, "Received boot completed intent");
-        DiracUtils.initialize(context);
-        PopupCameraUtils.startService(context);
+        DozeUtils.checkDozeService(context);
     }
 }
