@@ -1,0 +1,3 @@
+-keep class org.carbonrom.settings.doze.* {
+  *;
+}
