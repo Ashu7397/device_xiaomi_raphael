@@ -1090,4 +1090,20 @@
     <!-- Whether device ignores the RSSNR signal implementation -->
     <bool name="config_ignoreRssnrSignalLevel">true</bool>
 
+    <!-- Is the battery LED intrusive? Used to decide if there should be a disable option -->
+    <bool name="config_intrusiveBatteryLed">true</bool>
+       
+    <!-- Max number of advertisers supported by bluetooth controller. 0 if the
+         device does not support multiple advertisement-->
+    <integer translatable="false" name="config_bluetooth_max_advertisers">4</integer>
+
+    <!-- Max number of scan filters supported by blutooth controller. 0 if the
+         device does not support hardware scan filters-->
+    <integer translatable="false" name="config_bluetooth_max_scan_filters">1</integer>
+
+    <!-- Flag specifying whether VoLTE TTY is supported -->
+    <bool name="config_carrier_volte_tty_supported">true</bool>
+
+    <!-- Boolean indicating whether 802.11r Fast BSS Transition is enabled on this platform -->
+    <bool translatable="false" name="config_wifi_fast_bss_transition_enabled">true</bool>
 </resources>
