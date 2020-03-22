@@ -24,4 +24,7 @@
     <!-- Doze: does this device support STATE_DOZE?  -->
     <bool name="doze_display_state_supported">true</bool>
 
+    <!-- Color of the FOD view -->
+    <color name="config_fodColor">#00ffff</color>
+
 </resources>
