@@ -19,7 +19,10 @@ $(call inherit-product, device/xiaomi/raphael/msmnile.mk)
 $(call inherit-product, vendor/carbon/config/common.mk)
 $(call inherit-product, vendor/carbon/config/gsm.mk)
 
-TARGET_BOOT_ANIMATION_RES := 1080
+# Boot animation
+TARGET_SCREEN_HEIGHT := 2340
+TARGET_SCREEN_WIDTH := 1080
+
 TARGET_GAPPS_ARCH := arm64
 
 # Device identifier. This must come after all inclusions.
