@@ -20,6 +20,7 @@ import android.content.SharedPreferences;
 import android.graphics.drawable.Icon;
 import android.service.quicksettings.Tile;
 import android.service.quicksettings.TileService;
+import android.widget.Toast;  
 
 import androidx.preference.PreferenceManager;
 
@@ -54,12 +55,17 @@ public class DcDimmingTile extends TileService {
     }
 
     private void switchDcDimming(boolean enable) {
-        try {
-            FileUtils.writeLine(DC_DIMMING_NODE, enable ? "1" : "0");
-        } catch (Exception e) {
-            // Do nothing
+        if (FileUtils.fileExists(DC_DIMMING_NODE)){
+            try {
+                FileUtils.writeLine(DC_DIMMING_NODE, enable ? "1" : "0");
+            } catch (Exception e) {
+                // Do nothing
+            }        
+        } else {
+            Toast.makeText(getApplicationContext(),R.string.dc_dimming_enable_summary_not_supported,Toast.LENGTH_SHORT).show();  
+            enable = false;
         }
-
+        
         if (enable) {
             getQsTile().setIcon(Icon.createWithResource(this, R.drawable.ic_dimming_on));
             getQsTile().setState(Tile.STATE_ACTIVE);
