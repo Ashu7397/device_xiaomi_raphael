@@ -881,7 +881,10 @@ product/lib64/vendor.qti.hardware.radio.ims@1.1.so
 product/lib64/vendor.qti.hardware.radio.ims@1.2.so
 product/lib64/vendor.qti.hardware.radio.ims@1.3.so
 product/lib64/vendor.qti.hardware.radio.ims@1.4.so
--product/priv-app/ims/ims.apk
+
+# ims.apk: patched ImsServiceStateReceiver.shallShowHDIcon() to always return false
+-product/priv-app/ims/ims.apk|ce4b30992c383ded08eeae50d9c7c46bec3093d8
+
 vendor/bin/imsdatadaemon
 vendor/bin/imsqmidaemon
 vendor/bin/imsrcsd
