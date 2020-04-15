@@ -30,6 +30,7 @@
 #include <sys/_system_properties.h>
 
 #include <android-base/properties.h>
+#include <android-base/logging.h>
 #include "property_service.h"
 #include "vendor_init.h"
 
@@ -58,4 +59,28 @@ void vendor_load_properties()
     // fingerprint
     property_override("ro.build.description", "raphael-user 10 QKQ1.190825.002 V11.0.7.0 release-keys");
     property_override_dual("ro.build.fingerprint", "ro.vendor.build.fingerprint", "google/coral/coral:10/QQ2A.200405.005/6254899:user/release-keys");
+
+    std::string region = android::base::GetProperty("ro.boot.hwc", "");
+
+    if (region.find("CN") != std::string::npos) 
+    {
+        property_override("ro.build.product", "raphaelin");
+        property_override("ro.product.device", "raphaelin");
+        property_override("ro.product.model", "Redmi K20 Pro");
+    } 
+    else if (region.find("INDIA") != std::string::npos) 
+    {
+        property_override("ro.build.product", "raphael");
+        property_override("ro.product.device", "raphael");
+        property_override("ro.product.model", "Redmi K20 Pro");
+    } 
+    else if (region.find("GLOBAL") != std::string::npos) 
+    {
+        property_override("ro.build.product", "raphael");
+        property_override("ro.product.device", "raphael");
+        property_override("ro.product.model", "Mi 9T Pro");
+    } 
+    else {
+        LOG(ERROR) << __func__ << ": unexcepted region!";
+    }
 }
