@@ -58,7 +58,7 @@ void vendor_load_properties()
 {
     // fingerprint
     property_override("ro.build.description", "raphael-user 10 QKQ1.190825.002 V11.0.8.0 release-keys");
-    property_override_dual("ro.build.fingerprint", "ro.vendor.build.fingerprint", "google/coral/coral:10/QQ2A.200501.001.B2/6352890:user/release-keys");
+    property_override_dual("ro.build.fingerprint", "ro.vendor.build.fingerprint", "google/walleye/walleye:8.1.0/OPM1.171019.011/4448085:user/release-keys");
 
     std::string region = android::base::GetProperty("ro.boot.hwc", "");
 
